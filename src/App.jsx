@@ -44,13 +44,13 @@ function App() {
     switch(type) {
       case 'warning': return 'bg-orange-100 text-orange-600'
       case 'success': return 'bg-green-100 text-green-600'
-      case 'secondary': return 'bg-blue-100 text-blue-600'
+      case 'secondary': return 'bg-purple-100 text-purple-600'
       default: return 'bg-gray-100 text-gray-600'
     }
   }
 
   return (
-    <div className="min-h-screen flex flex-col font-sans text-gray-900">
+    <div className="min-h-screen flex flex-col font-sans text-gray-900 bg-white">
       <ToastContainer position="bottom-right" autoClose={3000} />
       <Navbar cartCount={cart.length} />
       
@@ -59,68 +59,72 @@ function App() {
         <Stats />
 
         <section className="container mx-auto px-4 lg:px-8 py-16 lg:py-24">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Premium Digital Tools</h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">
-              Choose from our curated collection of premium digital products designed to boost your productivity and creativity.
-            </p>
-          </div>
+          <div className="border-2 border-dotted border-blue-400 p-8 rounded-xl mb-8">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Premium Digital Tools</h2>
+              <p className="text-gray-500 max-w-2xl mx-auto">
+                Choose from our curated collection of premium digital products designed to boost your productivity and creativity.
+              </p>
+            </div>
 
-          <div className="flex justify-center items-center gap-2 mb-12 bg-gray-50 rounded-full p-1 w-max mx-auto border border-gray-200">
-            <button 
-              className={`px-8 py-2 rounded-full font-medium transition-all ${activeTab === 'products' ? 'bg-primary text-white shadow-md' : 'text-gray-600 hover:text-gray-900'}`}
-              onClick={() => setActiveTab('products')}
-            >
-              Products
-            </button>
-            <button 
-              className={`px-8 py-2 rounded-full font-medium transition-all ${activeTab === 'cart' ? 'bg-primary text-white shadow-md' : 'text-gray-600 hover:text-gray-900'}`}
-              onClick={() => setActiveTab('cart')}
-            >
-              Cart ({cart.length})
-            </button>
+            <div className="flex justify-center items-center gap-2 bg-white rounded-full p-1 w-max mx-auto border border-gray-200 shadow-sm">
+              <button 
+                className={`px-8 py-2 rounded-full font-medium transition-all ${activeTab === 'products' ? 'bg-primary text-white shadow-md' : 'text-gray-600 hover:text-gray-900 bg-transparent'}`}
+                onClick={() => setActiveTab('products')}
+              >
+                Products
+              </button>
+              <button 
+                className={`px-8 py-2 rounded-full font-medium transition-all ${activeTab === 'cart' ? 'bg-primary text-white shadow-md' : 'text-gray-600 hover:text-gray-900 bg-transparent'}`}
+                onClick={() => setActiveTab('cart')}
+              >
+                Cart ({cart.length})
+              </button>
+            </div>
           </div>
 
           {activeTab === 'products' && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {products.map(product => (
-                <div key={product.id} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl transition-shadow flex flex-col h-full">
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center">
-                      {product.icon ? <img src={product.icon} alt={product.name} className="w-8 h-8 object-contain" /> : <div className="w-8 h-8 bg-gray-200 rounded-full"></div>}
+            <div className="border-2 border-dotted border-blue-400 p-8 rounded-xl">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {products.map(product => (
+                  <div key={product.id} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl transition-shadow flex flex-col h-full">
+                    <div className="flex justify-between items-start mb-6">
+                      <div className="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center border border-gray-100">
+                        {product.icon ? <img src={product.icon} alt={product.name} className="w-8 h-8 object-contain" /> : <div className="w-8 h-8 bg-gray-200 rounded-full"></div>}
+                      </div>
+                      {product.tag && (
+                        <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getTagColor(product.tagType)}`}>
+                          {product.tag}
+                        </span>
+                      )}
                     </div>
-                    {product.tag && (
-                      <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getTagColor(product.tagType)}`}>
-                        {product.tag}
-                      </span>
-                    )}
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">{product.name}</h3>
-                  <p className="text-gray-500 text-sm mb-6 flex-grow">{product.description}</p>
-                  
-                  <div className="flex items-baseline gap-1 mb-6">
-                    <span className="text-3xl font-extrabold">{product.price}</span>
-                    <span className="text-gray-500 text-sm font-medium">{product.period}</span>
-                  </div>
+                    <h3 className="text-xl font-bold mb-2 text-gray-900">{product.name}</h3>
+                    <p className="text-gray-500 text-sm mb-6 flex-grow leading-relaxed">{product.description}</p>
+                    
+                    <div className="flex items-baseline mb-6">
+                      <span className="text-3xl font-extrabold text-gray-900">{product.price}</span>
+                      <span className="text-gray-500 text-sm font-medium">{product.period}</span>
+                    </div>
 
-                  <ul className="space-y-3 mb-8">
-                    {product.features?.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-3 text-sm text-gray-600 font-medium">
-                        <FiCheck className="text-green-500 text-lg flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                    <ul className="space-y-3 mb-8">
+                      {product.features?.map((feature, idx) => (
+                        <li key={idx} className="flex items-center gap-3 text-sm text-gray-600 font-medium">
+                          <FiCheck className="text-green-500 text-lg flex-shrink-0" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
 
-                  <button 
-                    className={`w-full py-3 rounded-xl font-medium transition-colors mt-auto ${cart.some(item => item.id === product.id) ? 'bg-green-500 text-white hover:bg-green-600' : 'bg-primary text-white hover:bg-primary-focus'}`}
-                    onClick={() => handleAddToCart(product)}
-                    disabled={cart.some(item => item.id === product.id)}
-                  >
-                    {cart.some(item => item.id === product.id) ? 'Added to cart' : 'Buy Now'}
-                  </button>
-                </div>
-              ))}
+                    <button 
+                      className={`w-full py-3 rounded-xl font-medium transition-colors mt-auto ${cart.some(item => item.id === product.id) ? 'bg-green-500 text-white hover:bg-green-600' : 'bg-primary text-white hover:bg-primary-focus'}`}
+                      onClick={() => handleAddToCart(product)}
+                      disabled={cart.some(item => item.id === product.id)}
+                    >
+                      {cart.some(item => item.id === product.id) ? 'Added to cart' : 'Buy Now'}
+                    </button>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
 
