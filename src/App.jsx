@@ -108,7 +108,6 @@ function App() {
                       <li key={idx} className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                         <FiCheck className="text-green-500 text-lg flex-shrink-0" />
                         {feature}
-                      </span>
                       </li>
                     ))}
                   </ul>
