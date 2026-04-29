@@ -31,11 +31,16 @@ export default function Navbar({ cartCount }) {
       </div>
       <div className="navbar-end flex items-center gap-4">
         <div className="indicator cursor-pointer mr-2 md:mr-4">
-          {cartCount > 0 && <span className="indicator-item badge badge-primary badge-sm text-white">{cartCount}</span>}
-          <FiShoppingCart className="text-2xl text-gray-700" />
+          {cartCount > 0 && (
+            <span className="indicator-item badge badge-primary badge-sm text-white border-white border-2">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-75 animate-ping"></span>
+              {cartCount}
+            </span>
+          )}
+          <FiShoppingCart className="text-2xl text-gray-700 hover:text-primary transition-colors" />
         </div>
         <a className="hidden sm:inline-flex font-medium text-gray-700 cursor-pointer hover:text-primary transition-colors">Login</a>
-        <a className="btn btn-primary rounded-full px-6 text-white border-none bg-gradient-to-r from-primary to-purple-500 hover:from-purple-600 hover:to-purple-500 transition-all">Get Started</a>
+        <a className="btn btn-primary rounded-full px-6 text-white border-none bg-gradient-to-r from-primary to-purple-500 hover:from-purple-600 hover:to-purple-500 transition-all shadow-lg shadow-primary/20">Get Started</a>
       </div>
     </div>
   );
