@@ -59,7 +59,7 @@ function App() {
         <Stats />
 
         <section className="container mx-auto px-4 lg:px-8 py-16 lg:py-24">
-          <div className="border-2 border-dotted border-blue-400 p-8 rounded-xl mb-8">
+          <div className="mb-8">
             <div className="text-center mb-8">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Premium Digital Tools</h2>
               <p className="text-gray-500 max-w-2xl mx-auto">
@@ -84,7 +84,7 @@ function App() {
           </div>
 
           {activeTab === 'products' && (
-            <div className="border-2 border-dotted border-blue-400 p-8 rounded-xl">
+            <div className="mb-8">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {products.map(product => (
                   <div key={product.id} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl transition-shadow flex flex-col h-full">
