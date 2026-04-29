@@ -1,16 +1,22 @@
-# React + Vite
+# DigiTools Platform 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Premium digital tools for creators, professionals, and businesses. Work smarter with our suite of powerful tools including AI generation, design templates, automation, and more.
 
-Currently, two official plugins are available:
+## 🌟 Description
+DigiTools Platform is a modern, responsive React web application that allows users to browse premium digital products and add them to their shopping cart. It features a clean, professional design powered by Tailwind CSS and DaisyUI, offering a seamless user experience with dynamic state management and toast notifications.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ⚙️ Technologies Used
+- **React.js** - UI Library
+- **Tailwind CSS & DaisyUI** - Styling and UI Components
+- **JavaScript (ES6+)** - Core logic
+- **Vite** - Build tool
+- **React-Toastify** - Notification system
 
-## React Compiler
+## ✨ Top 3 Features
+1. **Dynamic Cart Management:** Instantly add or remove items from the cart with real-time price calculation and notification alerts.
+2. **Interactive View Toggling:** Seamlessly switch between the Products view and the Cart view without page reloads.
+3. **Fully Responsive Design:** A pixel-perfect, mobile-first design ensuring a smooth experience across desktops, tablets, and mobile devices.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔗 Links
+- **Live Site:** [Insert Live Link Here]
+- **GitHub Repository:** [https://github.com/SHUVASHIS01/DigiTools-Platform](https://github.com/SHUVASHIS01/DigiTools-Platform.git)
