@@ -18,5 +18,5 @@ DigiTools Platform is a modern, responsive React web application that allows use
 3. **Fully Responsive Design:** A pixel-perfect, mobile-first design ensuring a smooth experience across desktops, tablets, and mobile devices.
 
 ## 🔗 Links
-- **Live Site:** [Insert Live Link Here]
+- **Live Site:** [https://digtoolsplatform.netlify.app/](https://digtoolsplatform.netlify.app/)
 - **GitHub Repository:** [https://github.com/SHUVASHIS01/DigiTools-Platform](https://github.com/SHUVASHIS01/DigiTools-Platform.git)
