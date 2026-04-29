@@ -17,7 +17,7 @@ function App() {
   const [activeTab, setActiveTab] = useState('products')
 
   useEffect(() => {
-    fetch('/data/products.json')
+    fetch('/products.json')
       .then(res => res.json())
       .then(data => setProducts(data))
       .catch(err => console.error("Error fetching products:", err))
