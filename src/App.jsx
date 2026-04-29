@@ -114,10 +114,11 @@ function App() {
                   </ul>
 
                   <button 
-                    className="w-full py-3 rounded-xl bg-primary text-white font-medium hover:bg-primary-focus transition-colors mt-auto"
+                    className={`w-full py-3 rounded-xl font-medium transition-colors mt-auto ${cart.some(item => item.id === product.id) ? 'bg-green-500 text-white hover:bg-green-600' : 'bg-primary text-white hover:bg-primary-focus'}`}
                     onClick={() => handleAddToCart(product)}
+                    disabled={cart.some(item => item.id === product.id)}
                   >
-                    Buy Now
+                    {cart.some(item => item.id === product.id) ? 'Added to cart' : 'Buy Now'}
                   </button>
                 </div>
               ))}
